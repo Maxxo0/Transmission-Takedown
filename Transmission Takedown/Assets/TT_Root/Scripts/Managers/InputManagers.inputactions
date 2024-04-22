@@ -1,0 +1,106 @@
+{
+    "name": "InputManagers",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "19995f5d-cef5-49a0-a74e-823dea1ab4be",
+            "actions": [
+                {
+                    "name": "ArmaIzquierda(Pistola)",
+                    "type": "Button",
+                    "id": "c06fea17-54aa-446a-89f4-15f98bc76231",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ArmaDerecha(Moha)",
+                    "type": "Button",
+                    "id": "9804d6ba-ea87-457f-b546-a6cf7cb8b431",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ArmaArriba(Brazaco)",
+                    "type": "Button",
+                    "id": "429b9935-cf16-4e98-a9e9-542328723f23",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ArmaAbajo(Coche)",
+                    "type": "Button",
+                    "id": "5ca98c25-a7d0-455e-ae2b-559e8dc0bbdd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c4fbe029-5e74-4d7d-ac64-04647ee68a1c",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "ArmaIzquierda(Pistola)",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ef3d0ebb-67f3-4915-b76f-9f6138cd68e7",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "ArmaDerecha(Moha)",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c87fe6dd-9541-4bc0-ad11-efb3f75954b3",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "ArmaArriba(Brazaco)",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a1c36ff9-5ab9-4096-885c-4a978e39c4a2",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "ArmaAbajo(Coche)",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
