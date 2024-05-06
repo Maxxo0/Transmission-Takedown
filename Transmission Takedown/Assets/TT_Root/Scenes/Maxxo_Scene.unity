@@ -522,6 +522,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564426177}
   m_CullTransparentMesh: 1
+--- !u!1 &623988824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 623988826}
+  - component: {fileID: 623988825}
+  m_Layer: 0
+  m_Name: WeaponManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &623988825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623988824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0b7bc17443ac64c8f0b23fe4306fa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunG: {fileID: 1976020169}
+  bombG: {fileID: 1512632296}
+  armG: {fileID: 918978837}
+  carG: {fileID: 1190543685}
+  actualWeapon: 0
+--- !u!4 &623988826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623988824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &636402700
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,6 +834,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6af9afa6192027e4d9884afe7eea81c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &867285694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 867285695}
+  m_Layer: 3
+  m_Name: GunShootpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &867285695
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867285694}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.725}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1976020170}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &918978837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1929,7 +2009,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1976020170
 Transform:
   m_ObjectHideFlags: 0
@@ -1941,7 +2021,8 @@ Transform:
   m_LocalPosition: {x: -0.59, y: 0.064, z: 0.389}
   m_LocalScale: {x: 0.24688093, y: 0.21697551, z: 0.7244273}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 867285695}
   m_Father: {fileID: 1999394418}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2162,8 +2243,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1999394424}
-        m_TargetAssemblyTypeName: ChangeWeapon, Assembly-CSharp
+      - m_Target: {fileID: 623988825}
+        m_TargetAssemblyTypeName: WeaponManager, Assembly-CSharp
         m_MethodName: OnGun
         m_Mode: 0
         m_Arguments:
@@ -2178,8 +2259,8 @@ MonoBehaviour:
     m_ActionName: Gameplay/ArmaIzquierda(Pistola)[/Keyboard/leftArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1999394424}
-        m_TargetAssemblyTypeName: ChangeWeapon, Assembly-CSharp
+      - m_Target: {fileID: 623988825}
+        m_TargetAssemblyTypeName: WeaponManager, Assembly-CSharp
         m_MethodName: OnBomber
         m_Mode: 0
         m_Arguments:
@@ -2194,8 +2275,8 @@ MonoBehaviour:
     m_ActionName: Gameplay/ArmaDerecha(Moha)[/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1999394424}
-        m_TargetAssemblyTypeName: ChangeWeapon, Assembly-CSharp
+      - m_Target: {fileID: 623988825}
+        m_TargetAssemblyTypeName: WeaponManager, Assembly-CSharp
         m_MethodName: OnBigArm
         m_Mode: 0
         m_Arguments:
@@ -2210,8 +2291,8 @@ MonoBehaviour:
     m_ActionName: Gameplay/ArmaArriba(Brazaco)[/Keyboard/upArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1999394424}
-        m_TargetAssemblyTypeName: ChangeWeapon, Assembly-CSharp
+      - m_Target: {fileID: 623988825}
+        m_TargetAssemblyTypeName: WeaponManager, Assembly-CSharp
         m_MethodName: OnCar
         m_Mode: 0
         m_Arguments:
@@ -2240,6 +2321,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 22f9bb7f-9231-49e0-8f34-557ea44f3add
     m_ActionName: Gameplay/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1999394424}
+        m_TargetAssemblyTypeName: GunSystem, Assembly-CSharp
+        m_MethodName: OnShoot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 678e5c3f-cf4c-417a-84e2-19e2db519612
+    m_ActionName: Gameplay/Shoot[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Gameplay
@@ -2310,13 +2407,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1999394414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 019af86fd9b894c459244e1b11225fae, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d738fe1f2a95704098cc2665c07874d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunG: {fileID: 1976020169}
-  bombG: {fileID: 1512632296}
-  armG: {fileID: 918978837}
-  carG: {fileID: 1190543685}
+  bullet: {fileID: 4658800520243487949, guid: b09c4f54e1464da41af553df03654d2b, type: 3}
+  shootPoint: {fileID: 867285694}
+  canShoot: 1
+  shooting: 0
+  lowCD: 0.5
+  fastSpeed: 20
 --- !u!1 &2014336446
 GameObject:
   m_ObjectHideFlags: 0
