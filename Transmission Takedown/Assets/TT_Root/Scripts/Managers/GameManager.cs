@@ -18,9 +18,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public enum Weapons { gun, bomb, arm, car }
-
-    public Weapons weapon;
+    
 
     private void Awake()
     {

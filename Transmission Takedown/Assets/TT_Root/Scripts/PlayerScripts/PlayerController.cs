@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void Move()
-    {
+    {                                                  
         playerRb.MovePosition(transform.position + (transform.forward * input.magnitude) * speed * Time.deltaTime);
     }
 
@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    
     
 
 }
