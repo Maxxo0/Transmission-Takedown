@@ -14,8 +14,10 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement Stats")]
     public float speed;
+    public float normalSpeed;
     public float carSpeed;
     public float rotSpeed;
+    [SerializeField] bool canMove;
     float turnSpeed;
 
 
@@ -26,6 +28,8 @@ public class PlayerController : MonoBehaviour
         turnSpeed = 360;
         playerInput = GetComponent<PlayerInput>();
         playerRb = GetComponent<Rigidbody>();
+        normalSpeed = speed;
+        canMove = true;
     }
 
     // Update is called once per frame
@@ -38,7 +42,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        if (canMove) { Move(); }
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -63,7 +67,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
-    
+    public void StopMove()
+    {
+        canMove = false;
+        Invoke(nameof(ResetSpeed), 0.3f);
+    }
 
+    void ResetSpeed()
+    {
+        canMove = true;
+    }
 }
