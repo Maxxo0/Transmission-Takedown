@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public float rotSpeed;
     [SerializeField] bool canMove;
     float turnSpeed;
+    [SerializeField] float sensitivity;
 
 
 
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
         normalSpeed = speed;
         canMove = true;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -60,10 +62,14 @@ public class PlayerController : MonoBehaviour
     {
         if (input != Vector3.zero)
         {
+            
             var relative = (transform.position + input) - transform.position;
             var rot = Quaternion.LookRotation(relative, Vector3.up);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, turnSpeed * Time.deltaTime);
+            
+
+            //transform.Rotate(Vector3.up * move.x * sensitivity);
         }
     }
 
