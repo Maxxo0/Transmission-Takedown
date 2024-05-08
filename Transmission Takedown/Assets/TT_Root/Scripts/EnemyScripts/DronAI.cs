@@ -6,8 +6,12 @@ public class DronAI : MonoBehaviour
 {
 
     [SerializeField] Transform[] points;
+    [SerializeField] Transform enemyBoomShootPoint;
     [SerializeField] int i;
     [SerializeField] float speed;
+    [SerializeField] GameObject enemyBomb;
+    [SerializeField] bool canThrow;
+    [SerializeField] bool canMove;
 
     Rigidbody dronRb;
 
@@ -16,12 +20,18 @@ public class DronAI : MonoBehaviour
     void Start()
     {
         dronRb = GetComponent<Rigidbody>();
+        canMove = true;
+        canThrow = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Move(); 
+        if (canMove) { Move(); }
+        if (transform.position == points[i].position)
+        {
+            if (canThrow) { DronAttack(); }
+        }
     }
 
     void Move()
@@ -37,5 +47,25 @@ public class DronAI : MonoBehaviour
         }
 
         transform.position = Vector3.MoveTowards(transform.position, points[i].position, speed * Time.deltaTime);
+    }
+
+
+    void DronAttack()
+    {
+        canMove = false;
+        canThrow = false;
+        Rigidbody rb = Instantiate(enemyBomb, enemyBoomShootPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
+        Invoke(nameof(ResetMove), 1f);
+        Invoke(nameof(ResetAttack), 2f);
+    }
+
+    void ResetAttack()
+    {
+        canThrow = true;
+    }
+
+    void ResetMove()
+    {
+        canMove= true;
     }
 }

@@ -19,20 +19,7 @@ public class Bullet : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            EnemyHealth enemyHealth = other.GetComponent<EnemyHealth>();
-            enemyHealth.EnemyTakeDamage(bulletDamage);
-            Destroy(gameObject);
-        }
-
-        if (other.gameObject.CompareTag("Wall"))
-        {
-            Destroy(gameObject);
-        }
-    }
+    
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -41,13 +28,17 @@ public class Bullet : MonoBehaviour
             EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
             enemyHealth.EnemyTakeDamage(bulletDamage);
             Destroy(gameObject);
-            Debug.Log("Pega");
+            
         }
 
         if (collision.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
-            Debug.Log("Pega");
+            
+        }
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            Destroy(gameObject);
         }
     }
 }
