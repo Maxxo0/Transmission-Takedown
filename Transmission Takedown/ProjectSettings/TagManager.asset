@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - EnemyBullet
   - EnemyAttack
+  - Drone
   layers:
   - Default
   - TransparentFX
