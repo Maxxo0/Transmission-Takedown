@@ -64,19 +64,16 @@ public class PlayerController : MonoBehaviour
         if (input != Vector3.zero)
         {
 
-            /*var relative = (transform.position + input) - transform.position;
+            var relative = (transform.position + input) - transform.position;
             var rot = Quaternion.LookRotation(relative, Vector3.up);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, turnSpeed * Time.deltaTime);
             
 
             //transform.Rotate(Vector3.up * move.x * sensitivity);
-            */
+            
 
-            var relative = (transform.position + input) - transform.position;
-            var rot = Quaternion.LookRotation(Vector3.forward * move.x, Vector3.up);
-
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, rot, turnSpeed * Time.deltaTime);
+            
 
 
 
