@@ -56,6 +56,12 @@ public class GunSystem : MonoBehaviour
                     Invoke(nameof(ResetShoot), lowCD);
                 }
                 break;
+            case WeaponManager.Weapons.bigarm:
+                break;
+            case WeaponManager.Weapons.car:
+
+
+                break;
         }
     }
 

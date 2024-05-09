@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         if (canMove) { Move(); }
+        if (WeaponManager.Instance.actualWeapon == WeaponManager.Weapons.car) { speed = carSpeed; }
+        else { speed = normalSpeed; }
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -90,4 +92,6 @@ public class PlayerController : MonoBehaviour
     {
         canMove = true;
     }
+
+    
 }
