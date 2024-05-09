@@ -17,6 +17,7 @@ public class GunSystem : MonoBehaviour
     public float fastSpeed;
     public float slowSpeed;
     PlayerController playerController;
+    Animator playerAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -83,5 +84,17 @@ public class GunSystem : MonoBehaviour
         }
     }
 
-   
+    public void MeleeAttack(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            playerAnimator.SetTrigger("MeleeAttack");
+        }
+        if (context.canceled)
+        {
+
+        }
+    }
+
+
 }

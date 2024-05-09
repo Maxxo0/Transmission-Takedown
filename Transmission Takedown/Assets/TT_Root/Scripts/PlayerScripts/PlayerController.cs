@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     Vector2 move;
     Vector3 input;
     Rigidbody playerRb;
+    Animator playerAnimator;
 
     [Header("Movement Stats")]
     public float speed;
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
         turnSpeed = 360;
         playerInput = GetComponent<PlayerInput>();
         playerRb = GetComponent<Rigidbody>();
+        playerAnimator = GetComponent<Animator>();
         normalSpeed = speed;
         canMove = true;
         Cursor.lockState = CursorLockMode.Locked;
@@ -40,14 +42,17 @@ public class PlayerController : MonoBehaviour
         
         Rotation();
         Debug.Log(move);
-        
+        if (input == new Vector3(0, 0, 0)) { playerAnimator.SetBool("Run", false); }
+        if (WeaponManager.Instance.actualWeapon == WeaponManager.Weapons.car) { speed = carSpeed; }
+        else { speed = normalSpeed; }
+
     }
 
     private void FixedUpdate()
     {
         if (canMove) { Move(); }
-        if (WeaponManager.Instance.actualWeapon == WeaponManager.Weapons.car) { speed = carSpeed; }
-        else { speed = normalSpeed; }
+        
+        
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -59,6 +64,7 @@ public class PlayerController : MonoBehaviour
     void Move()
     {                                                  
         playerRb.MovePosition(transform.position + (transform.forward * input.magnitude) * speed * Time.deltaTime);
+        playerAnimator.SetBool("Run", true);
     }
 
     void Rotation()
