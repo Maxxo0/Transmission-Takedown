@@ -31,7 +31,7 @@ public class EnemyHealth : MonoBehaviour
 
     void EnemyDie()
     {
-        FirstZoneManager.Instance.SumEnemy();
+        SpawnManager.Instance.RestEnemy();
         Debug.Log("Enemigo Ejecutado");
         gameObject.SetActive(false);
     }
