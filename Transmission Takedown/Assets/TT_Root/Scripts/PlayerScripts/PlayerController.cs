@@ -18,7 +18,10 @@ public class PlayerController : MonoBehaviour
     public float normalSpeed;
     public float carSpeed;
     public float rotSpeed;
+    [SerializeField] float dashCD;
+    [SerializeField] float dashForce;
     [SerializeField] bool canMove;
+    [SerializeField] bool canDash;
     float turnSpeed;
     [SerializeField] float sensitivity;
 
@@ -99,5 +102,19 @@ public class PlayerController : MonoBehaviour
         canMove = true;
     }
 
+    public void Dash(InputAction.CallbackContext context)
+    {
+        if (context.started && canDash) 
+        {
+            canDash = false;
+            playerRb.AddForce(transform.forward * dashForce);
+            Invoke(nameof(ResetDash), dashCD);
+        }
+    }
+
+    void ResetDash()
+    {
+        canDash = true;
+    }
     
 }
