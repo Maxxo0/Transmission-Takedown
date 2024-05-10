@@ -11,6 +11,7 @@ public class GunSystem : MonoBehaviour
     [SerializeField] GameObject shootPoint;
     [SerializeField] GameObject shootPointB;
     [SerializeField] bool canShoot;
+    [SerializeField] bool canAttack;
     [SerializeField] bool shooting;
     
     public float lowCD;
@@ -23,6 +24,7 @@ public class GunSystem : MonoBehaviour
     void Start()
     {
         playerController = GetComponent<PlayerController>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -70,6 +72,12 @@ public class GunSystem : MonoBehaviour
     {
         canShoot = true;
     }
+
+    void ResetAttack()
+    {
+        canAttack = true;
+    }
+
     public void OnShoot(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -88,7 +96,12 @@ public class GunSystem : MonoBehaviour
     {
         if (context.started)
         {
-            playerAnimator.SetTrigger("MeleeAttack");
+            if (canAttack ) 
+            {
+                canAttack = false;
+                playerAnimator.SetTrigger("MeleeAttack");
+                Invoke(nameof(ResetAttack), 0.5f);
+            }  
         }
         if (context.canceled)
         {
@@ -96,5 +109,6 @@ public class GunSystem : MonoBehaviour
         }
     }
 
+   
 
 }

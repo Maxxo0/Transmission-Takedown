@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float dashForce;
     [SerializeField] bool canMove;
     [SerializeField] bool canDash;
-    float turnSpeed;
+    float turnSpeed;    
     [SerializeField] float sensitivity;
 
 
@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
         Rotation();
         Debug.Log(move);
         if (input == new Vector3(0, 0, 0)) { playerAnimator.SetBool("Run", false); }
+        
         if (WeaponManager.Instance.actualWeapon == WeaponManager.Weapons.car) { speed = carSpeed; }
         else { speed = normalSpeed; }
 
@@ -65,7 +66,8 @@ public class PlayerController : MonoBehaviour
     }
 
     void Move()
-    {                                                  
+    {   
+        
         playerRb.MovePosition(transform.position + (transform.forward * input.magnitude) * speed * Time.deltaTime);
         playerAnimator.SetBool("Run", true);
     }
@@ -74,7 +76,7 @@ public class PlayerController : MonoBehaviour
     {
         if (input != Vector3.zero)
         {
-
+            /*
             var relative = (transform.position + input) - transform.position;
             var rot = Quaternion.LookRotation(relative, Vector3.up);
 
@@ -83,9 +85,10 @@ public class PlayerController : MonoBehaviour
 
             //transform.Rotate(Vector3.up * move.x * sensitivity);
             
+            */
 
-            
-
+            var targetAngle = Mathf.Atan2(input.x, input.z) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, targetAngle, 0);
 
 
         }
