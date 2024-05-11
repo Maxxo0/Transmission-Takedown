@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float dashForce;
     [SerializeField] bool canMove;
     [SerializeField] bool canDash;
+    [SerializeField] bool dashing;
     float turnSpeed;    
     [SerializeField] float sensitivity;
 
@@ -45,7 +46,7 @@ public class PlayerController : MonoBehaviour
         
         Rotation();
         Debug.Log(move);
-        if (input == new Vector3(0, 0, 0)) { playerAnimator.SetBool("Run", false); }
+        if (input == new Vector3(0, 0, 0) && !dashing) { playerAnimator.SetBool("Run", false); }
         
         if (WeaponManager.Instance.actualWeapon == WeaponManager.Weapons.car) { speed = carSpeed; }
         else { speed = normalSpeed; }
@@ -110,14 +111,27 @@ public class PlayerController : MonoBehaviour
         if (context.started && canDash) 
         {
             canDash = false;
+            dashing = true;
             playerRb.AddForce(transform.forward * dashForce);
+            playerAnimator.SetBool("Run", true);
+            Invoke(nameof(OnDash), 0.5f);
             Invoke(nameof(ResetDash), dashCD);
+        }
+        if (context.canceled)
+        {
+            
         }
     }
 
     void ResetDash()
     {
+       
         canDash = true;
+    }
+
+    void OnDash()
+    {
+        dashing = false;
     }
     
 }

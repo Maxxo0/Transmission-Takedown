@@ -32,17 +32,20 @@ public class WeaponManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        actualAmmo = maxAmmo;
     }
 
 
+
     public enum Weapons { gun, bomber, bigarm, car, hand }
-
     [SerializeField] GameObject gunG, bombG, armG, carG, handG;
-
-
     public Weapons actualWeapon;
+    public bool canGun, canBomber, canArm, canCar, onCar, haveMaxAmmo;
+    public float maxAmmo;
+    public float actualAmmo;
 
-    public bool canGun, canBomber, canArm, canCar;
+
 
     
 
@@ -67,11 +70,20 @@ public class WeaponManager : MonoBehaviour
         {
             handG.gameObject.SetActive(false);
         }
+        
+        if (actualAmmo <= 0) { actualAmmo = 0; }
+        if (actualAmmo > maxAmmo) { actualAmmo = maxAmmo; }
+        if (actualAmmo == maxAmmo)
+        {
+            haveMaxAmmo = true;
+        }
+        
+
     }
 
     public void OnGun(InputAction.CallbackContext context)
     {
-        if (canGun) 
+        if (canGun && onCar == false) 
         {
             gunG.SetActive(true); bombG.SetActive(false); armG.SetActive(false); carG.SetActive(false);
             actualWeapon = Weapons.gun;
@@ -79,7 +91,7 @@ public class WeaponManager : MonoBehaviour
     }
     public void OnBomber(InputAction.CallbackContext context)
     {
-        if (canBomber) 
+        if (canBomber && onCar == false) 
         {
             gunG.SetActive(false); bombG.SetActive(true); armG.SetActive(false); carG.SetActive(false);
             actualWeapon = Weapons.bomber;
@@ -88,7 +100,7 @@ public class WeaponManager : MonoBehaviour
 
     public void OnBigArm(InputAction.CallbackContext context)
     {
-        if (canArm) 
+        if (canArm && onCar == false) 
         {
             gunG.SetActive(false); bombG.SetActive(false); armG.SetActive(true); carG.SetActive(false);
             actualWeapon = Weapons.bigarm;
@@ -97,10 +109,21 @@ public class WeaponManager : MonoBehaviour
 
     public void OnCar(InputAction.CallbackContext context)
     {
-        if (canCar)
+        if (canCar && haveMaxAmmo)
         {
             carG.SetActive(true);
             actualWeapon = Weapons.car;
         }
+        else
+        {
+            gunG.SetActive(true); bombG.SetActive(false); armG.SetActive(false); carG.SetActive(false);
+            actualWeapon = Weapons.gun;
+        }
+    }
+
+    public void OffCar()
+    {
+        gunG.SetActive(true); bombG.SetActive(false); armG.SetActive(false); carG.SetActive(false);
+        actualWeapon = Weapons.gun;
     }
 }
