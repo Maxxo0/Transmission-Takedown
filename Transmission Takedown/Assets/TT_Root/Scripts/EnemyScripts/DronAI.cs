@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class DronAI : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class DronAI : MonoBehaviour
     [SerializeField] GameObject enemyBomb;
     [SerializeField] bool canThrow;
     [SerializeField] bool canMove;
+    [SerializeField] GameObject torret;
+    Animator dronAnimator;
 
     Rigidbody dronRb;
 
@@ -19,7 +22,9 @@ public class DronAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         dronRb = GetComponent<Rigidbody>();
+        dronAnimator = GetComponent<Animator>();
         canMove = true;
         canThrow = true;
     }
@@ -32,6 +37,7 @@ public class DronAI : MonoBehaviour
         {
             if (canThrow) { DronAttack(); }
         }
+
     }
 
     void Move()
@@ -45,6 +51,7 @@ public class DronAI : MonoBehaviour
 
             }
         }
+        transform.LookAt(points[i]);
 
         transform.position = Vector3.MoveTowards(transform.position, points[i].position, speed * Time.deltaTime);
     }
@@ -52,11 +59,15 @@ public class DronAI : MonoBehaviour
 
     void DronAttack()
     {
+        dronAnimator.SetTrigger("Attack");
         canMove = false;
         canThrow = false;
+        
+    }
+
+    void DronThrow()
+    {
         Rigidbody rb = Instantiate(enemyBomb, enemyBoomShootPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
-        Invoke(nameof(ResetMove), 1f);
-        Invoke(nameof(ResetAttack), 2f);
     }
 
     void ResetAttack()
@@ -67,5 +78,6 @@ public class DronAI : MonoBehaviour
     void ResetMove()
     {
         canMove= true;
+        Invoke(nameof(ResetAttack), 2f);
     }
 }

@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bomber : MonoBehaviour
+public class BomberEnemy : MonoBehaviour
 {
-
     [SerializeField] GameObject bomb;
 
     // Start is called before the first frame update
@@ -21,7 +20,7 @@ public class Bomber : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Instantiate(bomb, transform.position, Quaternion.identity);
             Destroy(gameObject);

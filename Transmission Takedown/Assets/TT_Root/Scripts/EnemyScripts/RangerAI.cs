@@ -15,11 +15,15 @@ public class RangerAI : MonoBehaviour
     [Header("Attack Configuration")]
     public float timeBetweenAttacks; // Tiempo de espera entre ataque y ataque
     bool alreadyAttacked; // Bool para determinar si se ha atacado
+    public bool alive;
+    [SerializeField] bool isAttacking;
 
     [SerializeField] GameObject projectile; // Ref al prefab del proyectil
     [SerializeField] Transform shootPoint; // Ref a la posición desde donde se disparan los proyectiles
     [SerializeField] float shootSpeedZ; // Vel. de disparo hacia delante
     [SerializeField] float shootSpeedY; // Vel. de disparo hacia arriba (en caso de bolea)
+    EnemyHealth enemyHealth;
+    Animator rangerAnim;
 
     [Header("States & Detection")]
     [SerializeField] float sightRange; // Rango de detección de persecución de la IA
@@ -29,6 +33,8 @@ public class RangerAI : MonoBehaviour
 
     private void Awake()
     {
+        enemyHealth = GetComponent<EnemyHealth>();
+        rangerAnim = GetComponent<Animator>();
         target = GameObject.Find("Player").transform; // Al inicio referencia el transform del Player, para poder perseguirlo cuando toca   
         agent = GetComponent<NavMeshAgent>();
     }
@@ -42,19 +48,26 @@ public class RangerAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Chequear si el target está en los rangos de detección y de ataque
-        targetInSightRange = Physics.CheckSphere(transform.position, sightRange, targetLayer);
-        targetInAttackRange = Physics.CheckSphere(transform.position, attackRange, targetLayer);
+        if (enemyHealth.enemyHealth > 0) 
+        {
+            // Chequear si el target está en los rangos de detección y de ataque
+            targetInSightRange = Physics.CheckSphere(transform.position, sightRange, targetLayer);
+            targetInAttackRange = Physics.CheckSphere(transform.position, attackRange, targetLayer);
 
-        // Si detecta el target pero no está em rango de ataque: PERSIGUE
-        if (targetInSightRange && !targetInAttackRange) ChaseTarget();
-        // Si detecta al target y está en rango de ataque: ATACA
-        if (targetInSightRange && targetInAttackRange) AttackTarget();
+            // Si detecta el target pero no está em rango de ataque: PERSIGUE
+            if (targetInSightRange && !targetInAttackRange) ChaseTarget();
+            // Si detecta al target y está en rango de ataque: ATACA
+            if (targetInSightRange && targetInAttackRange) AttackTarget(); 
+        }
     }
 
     void ChaseTarget()
     {
-        agent.SetDestination(target.position);
+        if (isAttacking == false) 
+        {
+            agent.SetDestination(target.position);
+            rangerAnim.SetBool("Run", true);
+        }
     }
 
     void AttackTarget()
@@ -66,11 +79,13 @@ public class RangerAI : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-
+            isAttacking = true;
+            rangerAnim.SetBool("Run", false);
             // Si no hemos atacado ya, atacamos
             GenetateProjectile();
             Debug.Log("Enemigo atacando");
             alreadyAttacked = true;
+            rangerAnim.SetTrigger("Attack");
             Invoke(nameof(ResetAttack), timeBetweenAttacks); // Resetea el ataque con un intervalo
 
         }
@@ -93,6 +108,11 @@ public class RangerAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+    }
+
+    void FinishAttack()
+    {
+        isAttacking = false;
     }
 
 }
