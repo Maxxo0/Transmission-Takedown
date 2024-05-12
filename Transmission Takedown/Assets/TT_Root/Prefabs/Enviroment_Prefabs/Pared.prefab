@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7640621949242859958}
   - component: {fileID: 6748409549782478355}
   - component: {fileID: 8810129331674389209}
-  - component: {fileID: 4134187681529456206}
   - component: {fileID: 7749769215340897407}
+  - component: {fileID: 6991830356978498457}
   m_Layer: 0
   m_Name: Pared
   m_TagString: Wall
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6300274352667706259}
-  m_Mesh: {fileID: -1550514412580984892, guid: 20fea2096d43d5f46888cfde4f1c1ae8, type: 3}
+  m_Mesh: {fileID: -1550514412580984892, guid: 1f58bbc56e8f80043b3377ed4282cc6c, type: 3}
 --- !u!23 &8810129331674389209
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -85,7 +85,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4134187681529456206
+--- !u!208 &7749769215340897407
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6300274352667706259}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.004, y: 0.010000001, z: 0.010000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.003, y: 0.010000001, z: 0.010000001}
+  m_TimeToStationary: 0.5
+--- !u!64 &6991830356978498457
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,20 +122,4 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: -1550514412580984892, guid: 20fea2096d43d5f46888cfde4f1c1ae8, type: 3}
---- !u!208 &7749769215340897407
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6300274352667706259}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.004, y: 0.010000001, z: 0.010000001}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0.003, y: 0.010000001, z: 0.010000001}
-  m_TimeToStationary: 0.5
+  m_Mesh: {fileID: -1550514412580984892, guid: 1f58bbc56e8f80043b3377ed4282cc6c, type: 3}
