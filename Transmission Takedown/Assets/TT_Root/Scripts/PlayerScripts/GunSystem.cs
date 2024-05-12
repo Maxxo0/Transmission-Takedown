@@ -52,6 +52,7 @@ public class GunSystem : MonoBehaviour
                 {
                     canShoot = false;
                     WeaponManager.Instance.actualAmmo -= 100;
+                    playerAnimator.SetTrigger("GunAttack");
                     playerController.StopMove();
                     Rigidbody rb = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
                     rb.AddForce(transform.forward * fastSpeed, ForceMode.Impulse);
@@ -62,6 +63,7 @@ public class GunSystem : MonoBehaviour
                 if (canShoot && canAttack && WeaponManager.Instance.actualAmmo >= 200)
                 {
                     canShoot = false;
+                    playerAnimator.SetTrigger("BomberAttack");
                     WeaponManager.Instance.actualAmmo -= 200;
                     playerController.StopMove();
                     Rigidbody rb = Instantiate(bomb, shootPointB.transform.position, Quaternion.identity).GetComponent<Rigidbody>();

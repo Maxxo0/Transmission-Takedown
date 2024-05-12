@@ -16,7 +16,9 @@ public class CarAI : MonoBehaviour
     [Header("Attack Configuration")]
     public float timeBetweenAttacks; // Tiempo de espera entre ataque y ataque
     bool alreadyAttacked; // Bool para determinar si se ha atacado
+    [SerializeField] bool canMove;
     [SerializeField] GameObject carHitBox;
+    Animator policeCarAnimator;
 
    
     [Header("States & Detection")]
@@ -27,6 +29,7 @@ public class CarAI : MonoBehaviour
 
     private void Awake()
     {
+
         target = GameObject.Find("Player").transform; // Al inicio referencia el transform del Player, para poder perseguirlo cuando toca   
         agent = GetComponent<NavMeshAgent>();
     }
@@ -34,24 +37,28 @@ public class CarAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        policeCarAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Chequear si el target está en los rangos de detección y de ataque
-        targetInSightRange = Physics.CheckSphere(transform.position, sightRange, targetLayer);
-        targetInAttackRange = Physics.CheckSphere(transform.position, attackRange, targetLayer);
+        if (canMove) 
+        {
+            // Chequear si el target está en los rangos de detección y de ataque
+            targetInSightRange = Physics.CheckSphere(transform.position, sightRange, targetLayer);
+            targetInAttackRange = Physics.CheckSphere(transform.position, attackRange, targetLayer);
 
-        // Si detecta el target pero no está em rango de ataque: PERSIGUE
-        if (targetInSightRange && !targetInAttackRange) ChaseTarget();
-        // Si detecta al target y está en rango de ataque: ATACA
-        if (targetInSightRange && targetInAttackRange) AttackTarget();
+            // Si detecta el target pero no está em rango de ataque: PERSIGUE
+            if (targetInSightRange && !targetInAttackRange) ChaseTarget();
+            // Si detecta al target y está en rango de ataque: ATACA
+            if (targetInSightRange && targetInAttackRange) AttackTarget();
+        }
     }
 
     void ChaseTarget()
     {
+        policeCarAnimator.SetBool("Run", true);
         agent.SetDestination(target.position);
     }
 
@@ -64,7 +71,7 @@ public class CarAI : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-
+            policeCarAnimator.SetBool("Run", false);
             // Si no hemos atacado ya, atacamos
             carHitBox.SetActive(true);
             agent.speed = 0f;
@@ -81,6 +88,10 @@ public class CarAI : MonoBehaviour
         agent.speed = carSpeed;
     }
 
+    void StopMove()
+    {
+        canMove = false;
+    }
    
     private void OnDrawGizmosSelected()
     {
