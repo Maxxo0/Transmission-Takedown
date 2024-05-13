@@ -21,7 +21,7 @@ public class TowerHealth : MonoBehaviour
     void Update()
     {
         if (enemyHealth <= 0) { enemyHealth = 0; EnemyDie(); }
-        if (FirstZoneManager.Instance.nEnemies == FirstZoneManager.Instance.maxEnemies) { canDie = true; }
+        //if (SpawnManager.Instance.nEnemies == FirstZoneManager.Instance.maxEnemies) { canDie = true; }
     }
 
 

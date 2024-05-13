@@ -6,29 +6,53 @@ public class SpawnEnemies : MonoBehaviour
 {
 
     [SerializeField] GameObject[] enemies;
-    [SerializeField] GameObject[] spawnPoints;
+    public int i;
+    [SerializeField] float xPos;
+    [SerializeField] float zPos;
     public int waveCount;
     public int wave;
-    public int enemyType;
-    public bool spawning;
+    [SerializeField] GameObject nextSpawn;
+    [SerializeField] int spawnRange;
     int enemiesSpawned;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        spawning = true;
+        
     }
 
-    // Update is called once per frame
+    // Update is called once per framea
     void Update()
     {
-         
+        if (i == enemies.Length) 
+        {
+            NextSpawn();
+        }
+        else 
+        {
+            Spawn();
+        }
     }
 
 
     void Spawn()
     {
+        xPos = Random.Range(-spawnRange, spawnRange);
+        zPos = Random.Range(-spawnRange, spawnRange);
+        Instantiate(enemies[i], new Vector3 (xPos + gameObject.transform.position.x, 0, gameObject.transform.position.z + zPos), Quaternion.identity);
+        i++;
+        SpawnManager.Instance.nEnemies++;
         
+    }
+
+    void NextSpawn()
+    {
+        if (SpawnManager.Instance.enemyCount == SpawnManager.Instance.spawnLimit)
+        {
+            SpawnManager.Instance.spawnLimit += enemies.Length;
+            nextSpawn.gameObject.SetActive(true);
+            gameObject.SetActive(false);
+        }
     }
 }
