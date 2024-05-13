@@ -14,6 +14,8 @@ public class SpawnManager : MonoBehaviour
 
     public int maxEnemies;
     public int nEnemies;
+    public int enemyCount;
+    public int spawnLimit;
 
     private void Awake()
     {
@@ -46,8 +48,9 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    public void RestEnemy()
+    
+    public void SumEnemy()
     {
-        nEnemies--;
+        nEnemies++;
     }
 }

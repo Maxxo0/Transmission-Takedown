@@ -45,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
 
     void EnemyDie()
     {
-        SpawnManager.Instance.RestEnemy();
+        SpawnManager.Instance.enemyCount++;
         enemyAnimator.SetTrigger("Death");
         Debug.Log("Enemigo Ejecutado");
         

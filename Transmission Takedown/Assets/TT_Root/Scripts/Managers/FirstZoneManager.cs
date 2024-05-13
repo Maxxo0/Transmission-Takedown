@@ -18,8 +18,7 @@ public class FirstZoneManager : MonoBehaviour
         }
     }
 
-    public int maxEnemies;
-    public int nEnemies;
+    
 
 
     private void Awake()
@@ -42,8 +41,5 @@ public class FirstZoneManager : MonoBehaviour
 
     
 
-    public void SumEnemy()
-    {
-        nEnemies++;
-    }
+    
 }
