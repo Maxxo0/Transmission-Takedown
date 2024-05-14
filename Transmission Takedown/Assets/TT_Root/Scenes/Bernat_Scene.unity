@@ -291,11 +291,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8010859099199426946, guid: c917cfd4e1333824390b581193c24a3e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b41080aea8d54b74ba6b1088df4c7d4b, type: 2}
+    - target: {fileID: -5485553893301749710, guid: c917cfd4e1333824390b581193c24a3e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b41080aea8d54b74ba6b1088df4c7d4b, type: 2}
+    - target: {fileID: -1439730007547781893, guid: c917cfd4e1333824390b581193c24a3e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b41080aea8d54b74ba6b1088df4c7d4b, type: 2}
     - target: {fileID: 919132149155446097, guid: c917cfd4e1333824390b581193c24a3e,
         type: 3}
       propertyPath: m_Name
       value: FBX_Dron
       objectReference: {fileID: 0}
+    - target: {fileID: 1129496810705857465, guid: c917cfd4e1333824390b581193c24a3e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b41080aea8d54b74ba6b1088df4c7d4b, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -540,6 +560,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e674b7c2453ad8a4b9bf5b6821e34252, type: 2}
+    - target: {fileID: -2851139933628547115, guid: 194c2e59d5d75714fa428e0140dc42a8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b41080aea8d54b74ba6b1088df4c7d4b, type: 2}
     - target: {fileID: 919132149155446097, guid: 194c2e59d5d75714fa428e0140dc42a8,
         type: 3}
       propertyPath: m_Name
