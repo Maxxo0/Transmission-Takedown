@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
     public float enemyMaxHealth;
     bool canDie;
     public bool alive;
+    [SerializeField] bool isRanger;
     Animator enemyAnimator;
 
 
@@ -40,7 +41,12 @@ public class EnemyHealth : MonoBehaviour
     public void EnemyTakeDamage(int playerDamage)
     {
         enemyHealth -= playerDamage;
-
+        if (isRanger == true) 
+        {
+            RangerAI rangerAI = GetComponent<RangerAI>();
+            rangerAI.canAttack = false;
+            Invoke(nameof(ResetHit), 0.2f);
+        }
     }
 
     void EnemyDie()
@@ -49,6 +55,12 @@ public class EnemyHealth : MonoBehaviour
         enemyAnimator.SetTrigger("Death");
         Debug.Log("Enemigo Ejecutado");
         
+    }
+
+    void ResetHit()
+    {
+        RangerAI rangerAI = GetComponent<RangerAI> ();
+        rangerAI.canAttack = true;
     }
 
     public void Death() { gameObject.SetActive(false); }

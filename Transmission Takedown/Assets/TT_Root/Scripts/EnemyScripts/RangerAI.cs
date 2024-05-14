@@ -17,6 +17,7 @@ public class RangerAI : MonoBehaviour
     bool alreadyAttacked; // Bool para determinar si se ha atacado
     public bool alive;
     [SerializeField] bool isAttacking;
+    public bool canAttack;
 
     [SerializeField] GameObject projectile; // Ref al prefab del proyectil
     [SerializeField] Transform shootPoint; // Ref a la posición desde donde se disparan los proyectiles
@@ -42,7 +43,7 @@ public class RangerAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        canAttack = true;
     }
 
     // Update is called once per frame
@@ -77,7 +78,7 @@ public class RangerAI : MonoBehaviour
         // La IA mira directamente al target
         transform.LookAt(target);
 
-        if (!alreadyAttacked)
+        if (!alreadyAttacked && canAttack == true)
         {
             isAttacking = true;
             rangerAnim.SetBool("Run", false);

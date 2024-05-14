@@ -571,6 +571,7 @@ MonoBehaviour:
   enemyHealth: 100
   enemyMaxHealth: 100
   alive: 0
+  isRanger: 1
 --- !u!195 &2889230890869325073
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -616,6 +617,7 @@ MonoBehaviour:
   timeBetweenAttacks: 3
   alive: 0
   isAttacking: 0
+  canAttack: 0
   projectile: {fileID: 4949133113306513189, guid: c1be565593636f1409f397df98f7fcef,
     type: 3}
   shootPoint: {fileID: 4630494438554347008}

@@ -8,6 +8,7 @@ public class HealthSystem : MonoBehaviour
     [Header("Life Stats")]
     public float health;
     public float maxHealth;
+    
 
 
     // Start is called before the first frame update
