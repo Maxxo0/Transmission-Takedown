@@ -19,22 +19,22 @@ public class EnemyBullet : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            HealthSystem healthSystem = collision.gameObject.GetComponent<HealthSystem>();
+            HealthSystem healthSystem = other.gameObject.GetComponent<HealthSystem>();
             healthSystem.TakeDamage(enemyBulletDamage);
             Destroy(gameObject);
-            
+
         }
 
-        if (collision.gameObject.CompareTag("Wall"))
+        if (other.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
-            
+
         }
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Bullet"))
         {
             Destroy(gameObject);
         }

@@ -23,9 +23,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] bool canMove;
     [SerializeField] bool canDash;
     [SerializeField] bool dashing;
+    [SerializeField] bool insta;
     float turnSpeed;    
     [SerializeField] float sensitivity;
-
+    private float currentVelocity;
 
 
     // Start is called before the first frame update
@@ -37,13 +38,16 @@ public class PlayerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         normalSpeed = speed;
         canMove = true;
+        insta = true;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (insta) { move = playerInput.actions["Movement"].ReadValue<Vector2>(); }
+        input = new Vector3(move.x, 0, move.y);
         Rotation();
         Debug.Log(move);
         if (input == new Vector3(0, 0, 0) && !dashing) { playerAnimator.SetBool("Run", false); }
@@ -60,21 +64,26 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        move = context.ReadValue<Vector2>();
-        input = new Vector3(move.x, 0, move.y);
-    }
+    
 
     void Move()
     {   
         
-        playerRb.MovePosition(transform.position + (transform.forward * input.magnitude) * speed * Time.deltaTime);
+        playerRb.velocity = input * speed;
         playerAnimator.SetBool("Run", true);
     }
 
     void Rotation()
     {
+        if (move.sqrMagnitude == 0) return;
+
+
+        var targetAngle = Mathf.Atan2(input.x, input.z) * Mathf.Rad2Deg;
+        var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref currentVelocity, sensitivity);
+        transform.rotation = Quaternion.Euler(0, angle, 0);
+
+
+
         if (input != Vector3.zero)
         {
             /*
@@ -88,8 +97,7 @@ public class PlayerController : MonoBehaviour
             
             */
 
-            var targetAngle = Mathf.Atan2(input.x, input.z) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0, targetAngle, 0);
+            
 
 
         }
@@ -129,9 +137,24 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
+    void ResetInput()
+    {
+        insta = true;
+    }
+
     void OnDash()
     {
         dashing = false;
     }
-    
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall") && WeaponManager.Instance.actualWeapon == WeaponManager.Weapons.car)
+        {
+            playerRb.AddForce(-transform.forward * speed);
+            insta = false;
+            Invoke(nameof(ResetInput), 0.2f);
+            
+        }
+    }
 }

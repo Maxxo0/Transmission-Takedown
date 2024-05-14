@@ -114,7 +114,7 @@ public class WeaponManager : MonoBehaviour
             carG.SetActive(true);
             actualWeapon = Weapons.car;
         }
-        else
+        else if (canGun)
         {
             gunG.SetActive(true); bombG.SetActive(false); armG.SetActive(false); carG.SetActive(false);
             actualWeapon = Weapons.gun;
