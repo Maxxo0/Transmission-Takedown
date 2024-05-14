@@ -9,6 +9,7 @@ public class ActiveWeapons : MonoBehaviour
     [SerializeField] bool isBomber;
     [SerializeField] bool isBigArm;
     [SerializeField] bool isCar;
+    [SerializeField] bool isSword;
 
 
 
@@ -32,6 +33,7 @@ public class ActiveWeapons : MonoBehaviour
             if (isBomber == true) { WeaponManager.Instance.canBomber = true; PowerOff(); }
             if (isBigArm == true) { WeaponManager.Instance.canArm = true; PowerOff(); }
             if (isCar == true) { WeaponManager.Instance.canCar = true; PowerOff(); }
+            if (isSword == true) { WeaponManager.Instance.canSword = true; PowerOff(); }
 
         }
     }

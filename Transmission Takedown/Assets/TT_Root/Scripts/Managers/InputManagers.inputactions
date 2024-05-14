@@ -76,13 +76,22 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "745fe81e-e557-4932-b087-03b5d840b801",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "c4fbe029-5e74-4d7d-ac64-04647ee68a1c",
-                    "path": "<Keyboard>/leftArrow",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -104,7 +113,7 @@
                 {
                     "name": "",
                     "id": "ef3d0ebb-67f3-4915-b76f-9f6138cd68e7",
-                    "path": "<Keyboard>/rightArrow",
+                    "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -126,7 +135,7 @@
                 {
                     "name": "",
                     "id": "c87fe6dd-9541-4bc0-ad11-efb3f75954b3",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/3",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -148,7 +157,7 @@
                 {
                     "name": "",
                     "id": "a1c36ff9-5ab9-4096-885c-4a978e39c4a2",
-                    "path": "<Keyboard>/downArrow",
+                    "path": "<Keyboard>/4",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -340,6 +349,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "MeleeAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6ef69f98-5b35-41eb-98a2-44017a86d61e",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
