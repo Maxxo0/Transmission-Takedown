@@ -19,24 +19,22 @@ public class Bullet : MonoBehaviour
         
     }
 
-    
+   
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
+            EnemyHealth enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
             enemyHealth.EnemyTakeDamage(bulletDamage);
             Destroy(gameObject);
-            
         }
-
-        if (collision.gameObject.CompareTag("Wall"))
+        if (other.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
-            
+
         }
-        if (collision.gameObject.CompareTag("EnemyBullet"))
+        if (other.gameObject.CompareTag("EnemyBullet"))
         {
             Destroy(gameObject);
         }

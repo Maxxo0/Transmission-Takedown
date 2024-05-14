@@ -54,9 +54,8 @@ public class GunSystem : MonoBehaviour
                     WeaponManager.Instance.actualAmmo -= 100;
                     playerAnimator.SetTrigger("GunAttack");
                     playerController.StopMove();
-                    Rigidbody rb = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-                    rb.AddForce(transform.forward * fastSpeed, ForceMode.Impulse);
-                    Invoke(nameof(ResetShoot), lowCD);
+                    
+                    
                 }
                 break;
             case WeaponManager.Weapons.bomber:
@@ -66,10 +65,8 @@ public class GunSystem : MonoBehaviour
                     playerAnimator.SetTrigger("BomberAttack");
                     WeaponManager.Instance.actualAmmo -= 200;
                     playerController.StopMove();
-                    Rigidbody rb = Instantiate(bomb, shootPointB.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-                    rb.AddForce(transform.forward * slowSpeed, ForceMode.Impulse);
-                    rb.AddForce(transform.up * fastSpeed, ForceMode.Impulse);
-                    Invoke(nameof(ResetShoot), midCD);
+                    
+                    
                 }
                 break;
             case WeaponManager.Weapons.bigarm:
@@ -126,6 +123,21 @@ public class GunSystem : MonoBehaviour
     {
         Debug.Log("Can Car Reset");
         WeaponManager.Instance.canCar = true;
+    }
+
+    void BombAttack()
+    {
+        Rigidbody rb = Instantiate(bomb, shootPointB.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward * fastSpeed, ForceMode.Impulse);
+        rb.AddForce(transform.up * slowSpeed, ForceMode.Impulse);
+        Invoke(nameof(ResetShoot), midCD);
+    }
+
+    void GunAttack()
+    {
+        Rigidbody rb = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+        rb.AddForce(transform.forward * fastSpeed, ForceMode.Impulse);
+        Invoke(nameof(ResetShoot), lowCD);
     }
 
     public void OnShoot(InputAction.CallbackContext context)

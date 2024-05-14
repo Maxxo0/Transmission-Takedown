@@ -39,9 +39,9 @@ public class WeaponManager : MonoBehaviour
 
 
     public enum Weapons { gun, bomber, bigarm, car, hand }
-    [SerializeField] GameObject gunG, bombG, armG, carG, handG;
+    [SerializeField] GameObject gunG, bombG, armG, carG, handG, swordG;
     public Weapons actualWeapon;
-    public bool canGun, canBomber, canArm, canCar, onCar, haveMaxAmmo;
+    public bool canGun, canBomber, canArm, canCar, onCar, haveMaxAmmo, canSword;
     public float maxAmmo;
     public float actualAmmo;
 
@@ -78,7 +78,7 @@ public class WeaponManager : MonoBehaviour
             haveMaxAmmo = true;
         }
         
-
+        if (canSword == true) { swordG.SetActive(true); }
     }
 
     public void OnGun(InputAction.CallbackContext context)
@@ -114,7 +114,7 @@ public class WeaponManager : MonoBehaviour
             carG.SetActive(true);
             actualWeapon = Weapons.car;
         }
-        else
+        else if (canGun)
         {
             gunG.SetActive(true); bombG.SetActive(false); armG.SetActive(false); carG.SetActive(false);
             actualWeapon = Weapons.gun;
