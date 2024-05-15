@@ -31,6 +31,15 @@ public class MeleeAttack : MonoBehaviour
                 WeaponManager.Instance.actualAmmo += 100;
             }
         }
+        if (other.gameObject.CompareTag("Box"))
+        {
+            VoxHealth voxHealth = other.gameObject.GetComponent<VoxHealth>();
+            voxHealth.BoxTakeDamage(attackDamage);
+            if (Sword) 
+            {
+                WeaponManager.Instance.actualAmmo += 200;
+            }
+        }
 
     }
 }

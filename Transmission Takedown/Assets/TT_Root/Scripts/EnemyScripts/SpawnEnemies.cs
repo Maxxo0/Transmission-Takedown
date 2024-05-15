@@ -19,17 +19,17 @@ public class SpawnEnemies : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per framea
     void Update()
     {
-        if (i == enemies.Length) 
+        if (i == enemies.Length)
         {
             NextSpawn();
         }
-        else 
+        else
         {
             Spawn();
         }
@@ -40,10 +40,10 @@ public class SpawnEnemies : MonoBehaviour
     {
         xPos = Random.Range(-spawnRange, spawnRange);
         zPos = Random.Range(-spawnRange, spawnRange);
-        Instantiate(enemies[i], new Vector3 (xPos + gameObject.transform.position.x, 0, gameObject.transform.position.z + zPos), Quaternion.identity);
+        Instantiate(enemies[i], new Vector3(xPos + gameObject.transform.position.x, 0, gameObject.transform.position.z + zPos), Quaternion.identity);
         i++;
         SpawnManager.Instance.nEnemies++;
-        
+
     }
 
     void NextSpawn()
@@ -54,5 +54,11 @@ public class SpawnEnemies : MonoBehaviour
             nextSpawn.gameObject.SetActive(true);
             gameObject.SetActive(false);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, spawnRange);
     }
 }

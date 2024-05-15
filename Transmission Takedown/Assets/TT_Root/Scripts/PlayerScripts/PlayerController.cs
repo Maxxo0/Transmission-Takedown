@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         
         if (WeaponManager.Instance.actualWeapon == WeaponManager.Weapons.car) { speed = carSpeed; }
         else { speed = normalSpeed; }
-
+        FirstTime();
     }
 
     private void FixedUpdate()
@@ -100,6 +100,37 @@ public class PlayerController : MonoBehaviour
             
 
 
+        }
+    }
+
+
+    void FirstTime()
+    {
+        if (WeaponManager.Instance.firstSword == true && WeaponManager.Instance.canSword == true)
+        {
+            WeaponManager.Instance.firstSword = false;
+            playerAnimator.SetTrigger("TakeSword");
+            StopMove();
+        }
+        if (WeaponManager.Instance.firstGun == true && WeaponManager.Instance.canGun == true && WeaponManager.Instance.actualWeapon == WeaponManager.Weapons.gun)
+        {
+            
+            WeaponManager.Instance.firstGun = false;
+            playerAnimator.SetTrigger("NewWeapon");
+            StopMove();
+        }
+        if (WeaponManager.Instance.firstBomber == true && WeaponManager.Instance.canBomber == true && WeaponManager.Instance.actualWeapon == WeaponManager.Weapons.bomber)
+        {
+            WeaponManager.Instance.firstBomber = false;
+            
+            playerAnimator.SetTrigger("NewWeapon");
+            StopMove();
+        }
+        if (WeaponManager.Instance.firstBigArm == true && WeaponManager.Instance.canArm == true && WeaponManager.Instance.actualWeapon == WeaponManager.Weapons.bigarm)
+        {
+            WeaponManager.Instance.firstBigArm = false;
+            playerAnimator.SetTrigger("NewWeapon");
+            StopMove();
         }
     }
 

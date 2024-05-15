@@ -73,6 +73,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prop_Caja1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 02da32a980ed19441abe1abbc1c4d028,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 02da32a980ed19441abe1abbc1c4d028,
+        type: 3}
+      propertyPath: m_TagString
+      value: Box
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -81,6 +91,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 9176342157270742544}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 02da32a980ed19441abe1abbc1c4d028,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5749195534652336860}
   m_SourcePrefab: {fileID: 100100000, guid: 02da32a980ed19441abe1abbc1c4d028, type: 3}
 --- !u!1 &1050999886637434656 stripped
 GameObject:
@@ -109,3 +123,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.008410513, y: 0.007794766, z: 0.0062419646}
   m_Center: {x: 3.4148589e-12, y: -2.5677703e-11, z: -0.00038127892}
+--- !u!114 &5749195534652336860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050999886637434656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ff9a6df3acfd244bae728cf720ffdd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: 0
+  enemyMaxHealth: 1

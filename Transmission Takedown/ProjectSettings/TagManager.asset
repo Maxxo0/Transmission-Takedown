@@ -13,6 +13,7 @@ TagManager:
   - Drone
   - SwordAttack
   - BigArmAttack
+  - Box
   layers:
   - Default
   - TransparentFX

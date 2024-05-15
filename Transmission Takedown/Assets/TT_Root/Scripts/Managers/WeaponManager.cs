@@ -42,6 +42,7 @@ public class WeaponManager : MonoBehaviour
     [SerializeField] GameObject gunG, bombG, armG, carG, handG, swordG;
     public Weapons actualWeapon;
     public bool canGun, canBomber, canArm, canCar, onCar, haveMaxAmmo, canSword;
+    public bool firstSword, firstGun, firstBomber, firstBigArm;
     public float maxAmmo;
     public float actualAmmo;
 
