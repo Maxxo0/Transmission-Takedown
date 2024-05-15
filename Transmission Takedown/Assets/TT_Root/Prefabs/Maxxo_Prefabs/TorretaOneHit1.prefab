@@ -126,11 +126,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4216572677459350067, guid: f169d4006e2e29b44b10dedcf77a03f8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a58e316610f075b4888619e0893f2fa4, type: 2}
+    - target: {fileID: -2460417699667275807, guid: f169d4006e2e29b44b10dedcf77a03f8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a58e316610f075b4888619e0893f2fa4, type: 2}
+    - target: {fileID: -804731622281664130, guid: f169d4006e2e29b44b10dedcf77a03f8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a58e316610f075b4888619e0893f2fa4, type: 2}
     - target: {fileID: 919132149155446097, guid: f169d4006e2e29b44b10dedcf77a03f8,
         type: 3}
       propertyPath: m_Name
       value: enemigo_torreta2
       objectReference: {fileID: 0}
+    - target: {fileID: 4005567319706895752, guid: f169d4006e2e29b44b10dedcf77a03f8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a58e316610f075b4888619e0893f2fa4, type: 2}
+    - target: {fileID: 6944656104360116776, guid: f169d4006e2e29b44b10dedcf77a03f8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a58e316610f075b4888619e0893f2fa4, type: 2}
+    - target: {fileID: 8567717000986892130, guid: f169d4006e2e29b44b10dedcf77a03f8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a58e316610f075b4888619e0893f2fa4, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
