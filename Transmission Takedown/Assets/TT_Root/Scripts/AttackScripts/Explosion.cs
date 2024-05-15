@@ -27,12 +27,10 @@ public class Explosion : MonoBehaviour
             enemyHealth.EnemyTakeDamage(attackDamage);
             
         }
-
     }
-
     void PowerOff()
     {
-        Destroy(gameObject);
+       // Destroy(gameObject);
     }
 
 }
