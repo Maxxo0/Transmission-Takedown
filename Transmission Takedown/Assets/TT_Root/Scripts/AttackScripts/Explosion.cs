@@ -30,7 +30,7 @@ public class Explosion : MonoBehaviour
     }
     void PowerOff()
     {
-       // Destroy(gameObject);
+       Destroy(gameObject);
     }
 
 }

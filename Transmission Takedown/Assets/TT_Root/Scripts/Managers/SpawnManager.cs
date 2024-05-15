@@ -16,6 +16,12 @@ public class SpawnManager : MonoBehaviour
     public int nEnemies;
     public int enemyCount;
     public int spawnLimit;
+    [SerializeField] GameObject[] doorsCol;
+    [SerializeField] GameObject blueKey, yellowKey, redKey;
+    [SerializeField] GameObject gun, bomb, arm, car;
+    public bool haveBlueKey, haveYellowKey, haveRedKey;
+
+
 
     private void Awake()
     {
@@ -45,7 +51,7 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (enemyCount == 9) { blueKey.SetActive(true); }
     }
 
     
