@@ -8,7 +8,7 @@ public class FollowPlayer : MonoBehaviour
 
     [SerializeField] Transform player;
     Vector3 offset;
-    float smoothTime;
+    float smoothTime = 0.25f;
     Vector3 currentVelocity = Vector3.zero;
     // Start is called before the first frame update
     void Start()
