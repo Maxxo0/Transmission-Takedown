@@ -14,7 +14,7 @@ public class TurretManager : MonoBehaviour
 
     public bool firstTurret;
     public bool secondTurret;
-
+    public float turretTime;
 
 
     private void Awake()

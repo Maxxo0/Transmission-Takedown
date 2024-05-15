@@ -36,6 +36,7 @@ public class TurretOneHit1 : MonoBehaviour
         TurretManager.Instance.firstTurret = false;
         Rigidbody rb = Instantiate(projectile, shootPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * shootSpeedZ, ForceMode.Impulse);
+        Invoke(nameof(ActiveSecondTurret), TurretManager.Instance.turretTime);  
         // rb.AddForce(transform.up * shootSpeedY, ForceMode.Impulse);
     }
 
