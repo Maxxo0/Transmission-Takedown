@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 10
-  canAttack: 0
+  canAttack: 1
   projectile: {fileID: 4949133113306513189, guid: c1be565593636f1409f397df98f7fcef,
     type: 3}
   shootPoint: {fileID: 2530859276110986929}

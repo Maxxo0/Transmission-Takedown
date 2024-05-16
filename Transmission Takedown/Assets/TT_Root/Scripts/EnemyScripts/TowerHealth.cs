@@ -9,12 +9,14 @@ public class TowerHealth : MonoBehaviour
     public float enemyMaxHealth;
     public bool canDie;
     Animator antenaAnimator;
+    bool oneTime;
     [SerializeField] int enemiesForDie;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        oneTime = true;
         enemyHealth = enemyMaxHealth;
         antenaAnimator = GetComponent<Animator>();
 
@@ -24,7 +26,7 @@ public class TowerHealth : MonoBehaviour
     void Update()
     {
         if (canDie == false) { enemyHealth = enemyMaxHealth; }
-        if (enemyHealth <= 0) { enemyHealth = 0; EnemyDie(); }
+        if (enemyHealth <= 0 && oneTime == true) { enemyHealth = 0; EnemyDie(); }
         if (SpawnManager.Instance.enemyCount == enemiesForDie) { canDie = true; antenaAnimator.SetBool("VDown", true); }
         //if (SpawnManager.Instance.nEnemies == FirstZoneManager.Instance.maxEnemies) { canDie = true; }
     }
@@ -38,7 +40,9 @@ public class TowerHealth : MonoBehaviour
 
     void EnemyDie()
     {
+        oneTime = false;
         SpawnManager.Instance.enemyCount++;
+        SpawnManager.Instance.nEnemies++;
         Debug.Log("Enemigo Ejecutado");
         antenaAnimator.SetBool("ADown", true);
         

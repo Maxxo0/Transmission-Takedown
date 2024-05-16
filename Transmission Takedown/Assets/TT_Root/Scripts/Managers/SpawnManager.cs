@@ -55,6 +55,7 @@ public class SpawnManager : MonoBehaviour
         if (enemyCount == 9 && haveBlueKey == false && WeaponManager.Instance.canGun == false) { blueKey.SetActive(true); gun.SetActive(true); }
         if (enemyCount == 11) { Animator door = doorsCol[0].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); }
         if (enemyCount == 20 && haveYellowKey == false && WeaponManager.Instance.canBomber == false) { yellowKey.SetActive(true); bomb.SetActive(true); }
+        if (enemyCount == 23) { Animator door = doorsCol[1].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); }
     }
 
     
