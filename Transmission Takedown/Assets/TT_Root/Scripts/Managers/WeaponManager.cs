@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -45,10 +46,11 @@ public class WeaponManager : MonoBehaviour
     public bool firstSword, firstGun, firstBomber, firstBigArm;
     public float maxAmmo;
     public float actualAmmo;
+    [SerializeField] Image ammoBar;
 
 
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +61,8 @@ public class WeaponManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ammoBar.fillAmount = actualAmmo / maxAmmo;
+
         if (actualWeapon == Weapons.hand) 
         {
             handG.gameObject.SetActive(true);

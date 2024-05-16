@@ -10,6 +10,8 @@ public class EnemyHealth : MonoBehaviour
     bool canDie;
     public bool alive;
     [SerializeField] bool isRanger;
+    [SerializeField] int i;
+    [SerializeField] GameObject dropHeal;
     Animator enemyAnimator;
 
 
@@ -21,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
         enemyHealth = enemyMaxHealth;
         alive = true;
         canDie = true;
+        i = Random.Range(1, 4);
 
     }
 
@@ -51,6 +54,7 @@ public class EnemyHealth : MonoBehaviour
 
     void EnemyDie()
     {
+        if (i == 1) { Instantiate(dropHeal, transform.position, Quaternion.identity); }
         SpawnManager.Instance.enemyCount++;
         enemyAnimator.SetTrigger("Death");
         Debug.Log("Enemigo Ejecutado");

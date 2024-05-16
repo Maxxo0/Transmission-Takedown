@@ -314,4 +314,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e62b3dee36efb9444b54c90a61fb6ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBulletDamage: 10
+  enemyBulletDamage: 5

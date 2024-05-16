@@ -572,6 +572,9 @@ MonoBehaviour:
   enemyMaxHealth: 100
   alive: 0
   isRanger: 1
+  i: 0
+  dropHeal: {fileID: 3322428427044396656, guid: 1883ce39df28d274f8e8bdd6d5e59941,
+    type: 3}
 --- !u!195 &2889230890869325073
 NavMeshAgent:
   m_ObjectHideFlags: 0

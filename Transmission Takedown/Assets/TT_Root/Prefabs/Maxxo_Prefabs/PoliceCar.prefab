@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67ff4d95bc8479498460957704094ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carDamage: 50
+  carDamage: 25
 --- !u!1 &2367744446750298703
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +90,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2367744446750298703}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -98,7 +98,7 @@ Transform:
   - {fileID: 5465761852716389595}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1001 &5499159093387457328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -632,9 +632,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 0
-  enemyMaxHealth: 75
+  enemyMaxHealth: 50
   alive: 0
   isRanger: 0
+  i: 0
+  dropHeal: {fileID: 3322428427044396656, guid: 1883ce39df28d274f8e8bdd6d5e59941,
+    type: 3}
 --- !u!4 &5465761852716389595 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b2422deeb3a7b6c44b984d308a3dd530,

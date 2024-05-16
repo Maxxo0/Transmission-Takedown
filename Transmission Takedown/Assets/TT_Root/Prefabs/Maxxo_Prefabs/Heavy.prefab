@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db1177db083a0634eb2d39a4b08118f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heavyDamage: 100
+  heavyDamage: 35
 --- !u!1 &4765614623797673300
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +734,9 @@ MonoBehaviour:
   enemyMaxHealth: 200
   alive: 0
   isRanger: 0
+  i: 0
+  dropHeal: {fileID: 3322428427044396656, guid: 1883ce39df28d274f8e8bdd6d5e59941,
+    type: 3}
 --- !u!114 &2936221438449352779
 MonoBehaviour:
   m_ObjectHideFlags: 0

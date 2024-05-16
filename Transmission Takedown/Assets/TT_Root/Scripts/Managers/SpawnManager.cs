@@ -70,6 +70,7 @@ public class SpawnManager : MonoBehaviour
         if (enemyCount == 33) { Animator door = doorsCol[1].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); } 
         if (enemyCount == 33) { Animator door = doorsCol[2].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); }
         if (enemyCount == 37 && oneTime == true) { oneTime = false; Animator door = doorsCol[3].gameObject.GetComponent<Animator>(); door.SetBool("Open", true);  }
+        if (enemyCount == 37 && WeaponManager.Instance.canCar == false) { car.SetActive(true); oneTime = true; }
         if (enemyCount == 45) { Animator door = doorsCol[3].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); oneTime = true; }
         if (enemyCount == 45 && oneTime == true) { oneTime = false; Animator door = doorsCol[4].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); }
     }

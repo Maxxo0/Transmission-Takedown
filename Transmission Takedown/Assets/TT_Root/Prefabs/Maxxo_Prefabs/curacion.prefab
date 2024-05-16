@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1368997757147892591
 MeshFilter:
@@ -129,7 +129,7 @@ MonoBehaviour:
     m_Bits: 128
   sightRange: 5
   targetInSightRange: 0
-  heal: 0
+  heal: 20
 --- !u!195 &6161990669863767633
 NavMeshAgent:
   m_ObjectHideFlags: 0

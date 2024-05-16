@@ -15,6 +15,7 @@ TagManager:
   - BigArmAttack
   - Box
   - Antena
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
