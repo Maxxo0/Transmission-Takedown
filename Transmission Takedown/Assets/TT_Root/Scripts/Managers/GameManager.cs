@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    public GameObject optionsMenu;
 
     private void Awake()
     {
@@ -50,6 +51,21 @@ public class GameManager : MonoBehaviour
     public void Play()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void Options()
+    {
+        optionsMenu.SetActive(true);
+    }
+
+    public void ExitOptions(InputAction.CallbackContext context)
+    {
+        optionsMenu.SetActive(false);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 
 }
