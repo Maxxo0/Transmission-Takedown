@@ -64,12 +64,14 @@ public class SpawnManager : MonoBehaviour
         if (enemyCount == 23) { Animator door = doorsCol[8].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); }
         if (enemyCount == 23) { Animator door = doorsCol[7].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); }
         if (enemyCount == 23 && oneTime == true) { oneTime = false; Animator door = doorsCol[9].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); }
-        if (enemyCount == 32 && haveRedKey == false && WeaponManager.Instance.canArm == false) { redKey.SetActive(true); arm.SetActive(true); }
+        if (enemyCount == 32 && haveRedKey == false && WeaponManager.Instance.canArm == false) { redKey.SetActive(true); arm.SetActive(true); oneTime = true; }
         if (enemyCount == 32) { Animator door = doorsCol[9].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); }
         if (enemyCount == 33) { Animator door = doorsCol[0].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); }
         if (enemyCount == 33) { Animator door = doorsCol[1].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); } 
         if (enemyCount == 33) { Animator door = doorsCol[2].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); }
-        if (enemyCount == 37 && oneTime == true) { oneTime = false; Animator door = doorsCol[3].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); }
+        if (enemyCount == 37 && oneTime == true) { oneTime = false; Animator door = doorsCol[3].gameObject.GetComponent<Animator>(); door.SetBool("Open", true);  }
+        if (enemyCount == 45) { Animator door = doorsCol[3].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); oneTime = true; }
+        if (enemyCount == 45 && oneTime == true) { oneTime = false; Animator door = doorsCol[4].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); }
     }
 
     
