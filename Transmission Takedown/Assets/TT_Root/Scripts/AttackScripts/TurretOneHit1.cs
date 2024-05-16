@@ -22,7 +22,7 @@ public class TurretOneHit1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TurretManager.Instance.firstTurret == true) 
+        if (TurretManager.Instance.firstTurret == true && TurretManager.Instance.turret12Shoot == true) 
         {
 
             turretAnim.SetTrigger("Fire");

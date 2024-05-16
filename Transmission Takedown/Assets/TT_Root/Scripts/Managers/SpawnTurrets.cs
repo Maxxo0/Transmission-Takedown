@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SpawnTurrets : MonoBehaviour
 {
-    [SerializeField] GameObject turrets;
+    [SerializeField] bool tC, t12;
+    
 
 
     // Start is called before the first frame update
@@ -23,7 +24,8 @@ public class SpawnTurrets : MonoBehaviour
     {
         if (other.gameObject.gameObject.CompareTag("Player"))
         {
-            turrets.SetActive(true);
+            if (tC == true) { TurretManager.Instance.turretCShoot = true; }
+            if (t12 == true) { TurretManager.Instance.turret12Shoot = true; }
         }
     }
 }

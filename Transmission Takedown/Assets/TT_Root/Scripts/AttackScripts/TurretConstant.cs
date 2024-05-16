@@ -24,12 +24,12 @@ public class TurretConstant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canAttack == true)
+        if (canAttack == true && TurretManager.Instance.turretCShoot == true)
         {
 
             turretAnim.SetBool("Fire", true);
             // Si no hemos atacado ya, atacamos
-            Invoke(nameof(StopAttack), 2f);
+            Invoke(nameof(StopAttack), 3f);
 
         }
     }

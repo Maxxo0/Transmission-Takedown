@@ -158,7 +158,7 @@ public class GunSystem : MonoBehaviour
     {
         if (context.started)
         {
-            if (canAttack ) 
+            if (canAttack && WeaponManager.Instance.canSword == true ) 
             {
                 canAttack = false;
                 playerAnimator.SetTrigger("MeleeAttack");
