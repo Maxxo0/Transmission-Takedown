@@ -27,6 +27,11 @@ public class Explosion : MonoBehaviour
             enemyHealth.EnemyTakeDamage(attackDamage);
             
         }
+        if (other.gameObject.CompareTag("Antena"))
+        {
+            TowerHealth towerHealth = other.gameObject.GetComponent<TowerHealth>();
+            towerHealth.EnemyTakeDamage(attackDamage);
+        }
     }
     void PowerOff()
     {

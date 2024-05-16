@@ -701,6 +701,9 @@ MonoBehaviour:
   canThrow: 1
   canMove: 1
   torret: {fileID: 0}
+  eCount: 0
+  exploDie: {fileID: 6073457300387816186, guid: fcaacc45f8472ac43aa3e5e9a6f9dc14,
+    type: 3}
 --- !u!4 &8816186457051191827 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c917cfd4e1333824390b581193c24a3e,

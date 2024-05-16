@@ -31,5 +31,10 @@ public class Bomber : MonoBehaviour
             Instantiate(bomb, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("Antena"))
+        {
+            Instantiate(bomb, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }

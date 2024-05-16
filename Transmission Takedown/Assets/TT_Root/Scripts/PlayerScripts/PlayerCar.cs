@@ -27,6 +27,11 @@ public class PlayerCar : MonoBehaviour
             enemyHealth.EnemyTakeDamage(attackDamage);
             
         }
+        if (other.gameObject.CompareTag("Antena"))
+        {
+            TowerHealth towerHealth = other.gameObject.GetComponent<TowerHealth>();
+            towerHealth.EnemyTakeDamage(attackDamage);
+        }
 
     }
 }

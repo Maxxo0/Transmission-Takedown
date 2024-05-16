@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4205840670538780913}
   - component: {fileID: 6830532588305301563}
+  - component: {fileID: 5684895351896108671}
   m_Layer: 0
   m_Name: DronExplosion
   m_TagString: Untagged
@@ -54,6 +55,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5684895351896108671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6073457300387816186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68882da6c70b04041929b8e0446169ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyDamage: 20
 --- !u!1 &6455212295811090370
 GameObject:
   m_ObjectHideFlags: 0

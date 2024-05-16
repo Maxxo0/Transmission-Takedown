@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
@@ -51,7 +52,9 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemyCount == 9) { blueKey.SetActive(true); }
+        if (enemyCount == 9 && haveBlueKey == false && WeaponManager.Instance.canGun == false) { blueKey.SetActive(true); gun.SetActive(true); }
+        if (enemyCount == 11) { Animator door = doorsCol[0].gameObject.GetComponent<Animator>(); door.SetBool("Open", true); }
+        if (enemyCount == 20 && haveYellowKey == false && WeaponManager.Instance.canBomber == false) { yellowKey.SetActive(true); bomb.SetActive(true); }
     }
 
     

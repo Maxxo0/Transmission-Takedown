@@ -40,6 +40,15 @@ public class MeleeAttack : MonoBehaviour
                 WeaponManager.Instance.actualAmmo += 200;
             }
         }
+        if (other.gameObject.CompareTag("Antena"))
+        {
+            TowerHealth towerHealth = other.gameObject.GetComponent<TowerHealth>();
+            towerHealth.EnemyTakeDamage(attackDamage);
+            if (Sword)
+            {
+                WeaponManager.Instance.actualAmmo += 100;
+            }
+        }
 
     }
 }

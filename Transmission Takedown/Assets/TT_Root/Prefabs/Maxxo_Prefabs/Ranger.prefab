@@ -624,6 +624,6 @@ MonoBehaviour:
   shootSpeedZ: 10
   shootSpeedY: 10
   sightRange: 200
-  attackRange: 20
+  attackRange: 5
   targetInSightRange: 0
   targetInAttackRange: 0

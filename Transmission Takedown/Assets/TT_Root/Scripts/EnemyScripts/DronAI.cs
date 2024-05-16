@@ -14,6 +14,8 @@ public class DronAI : MonoBehaviour
     [SerializeField] bool canThrow;
     [SerializeField] bool canMove;
     [SerializeField] GameObject torret;
+    [SerializeField] int eCount;
+    [SerializeField] GameObject exploDie;
     Animator dronAnimator;
 
     Rigidbody dronRb;
@@ -37,7 +39,7 @@ public class DronAI : MonoBehaviour
         {
             if (canThrow) { DronAttack(); }
         }
-
+        if (SpawnManager.Instance.enemyCount == eCount) { DronDie(); }
     }
 
     void Move()
@@ -78,6 +80,16 @@ public class DronAI : MonoBehaviour
     void ResetMove()
     {
         canMove= true;
-        Invoke(nameof(ResetAttack), 2f);
+        Invoke(nameof(ResetAttack), 1f);
     }
+
+    void DronDie()
+    {
+        canMove = false;
+        canThrow= false;
+        Instantiate(exploDie, transform.position, Quaternion.identity);
+        gameObject.SetActive(false);
+    }
+
+    
 }

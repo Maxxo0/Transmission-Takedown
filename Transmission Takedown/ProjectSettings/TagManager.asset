@@ -14,6 +14,7 @@ TagManager:
   - SwordAttack
   - BigArmAttack
   - Box
+  - Antena
   layers:
   - Default
   - TransparentFX

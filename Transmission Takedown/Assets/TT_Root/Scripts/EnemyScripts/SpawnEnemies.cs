@@ -19,7 +19,7 @@ public class SpawnEnemies : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per framea
@@ -48,7 +48,7 @@ public class SpawnEnemies : MonoBehaviour
 
     void NextSpawn()
     {
-        if (SpawnManager.Instance.enemyCount == SpawnManager.Instance.spawnLimit)
+        if (SpawnManager.Instance.enemyCount == SpawnManager.Instance.nEnemies)
         {
             SpawnManager.Instance.spawnLimit += enemies.Length;
             nextSpawn.gameObject.SetActive(true);

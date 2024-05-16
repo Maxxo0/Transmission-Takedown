@@ -10,7 +10,7 @@ public class EnemyExplosion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke(nameof(PowerOff), 1f);
+        Invoke(nameof(PowerOff), 0.5f);
     }
 
     // Update is called once per frame

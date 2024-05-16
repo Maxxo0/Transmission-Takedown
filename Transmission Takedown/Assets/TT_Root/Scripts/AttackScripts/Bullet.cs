@@ -29,6 +29,12 @@ public class Bullet : MonoBehaviour
             enemyHealth.EnemyTakeDamage(bulletDamage);
             Destroy(gameObject);
         }
+        if (other.gameObject.CompareTag("Antena"))
+        {
+            TowerHealth towerHealth = other.gameObject.GetComponent<TowerHealth>();
+            towerHealth.EnemyTakeDamage(bulletDamage);
+            Destroy(gameObject);
+        }
         if (other.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
