@@ -83,6 +83,7 @@ public class WeaponManager : MonoBehaviour
         {
             haveMaxAmmo = true;
         }
+        else { haveMaxAmmo = false; }
         
         if (canSword == true) { swordG.SetActive(true); }
     }
@@ -120,6 +121,7 @@ public class WeaponManager : MonoBehaviour
     {
         if (canCar && haveMaxAmmo)
         {
+            haveMaxAmmo = false;
             carG.SetActive(true);
             cgun.SetActive(false); cbomb.SetActive(false); carm.SetActive(false); ccar.SetActive(true);
             actualWeapon = Weapons.car;

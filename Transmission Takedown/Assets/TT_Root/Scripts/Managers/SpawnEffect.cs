@@ -9,7 +9,7 @@ public class SpawnEffect : MonoBehaviour
     void Start()
     {
        
-        Invoke(nameof(Chao), 2.5f);
+        Invoke(nameof(Chao), 2f);
     }
 
     // Update is called once per frame

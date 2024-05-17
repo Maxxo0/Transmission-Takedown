@@ -58,6 +58,7 @@ public class EnemyHealth : MonoBehaviour
         SpawnManager.Instance.enemyCount++;
         enemyAnimator.SetTrigger("Death");
         Debug.Log("Enemigo Ejecutado");
+        if (isRanger) { CapsuleCollider rangerCol = GetComponent<CapsuleCollider>(); rangerCol.isTrigger = true; }
         
     }
 

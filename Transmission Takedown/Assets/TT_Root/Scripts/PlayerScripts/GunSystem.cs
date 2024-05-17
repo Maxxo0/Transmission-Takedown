@@ -12,7 +12,11 @@ public class GunSystem : MonoBehaviour
     [SerializeField] GameObject shootPointB;
     [SerializeField] bool canShoot;
     [SerializeField] bool canAttack;
-    
+    [SerializeField] AudioClip audioBullet;
+    [SerializeField] AudioClip audioSword;
+    [SerializeField] AudioClip audioBomb;
+    [SerializeField] AudioClip audioArm;
+    [SerializeField] AudioSource audioSource;
     
     [SerializeField] bool shooting;
     
@@ -51,6 +55,7 @@ public class GunSystem : MonoBehaviour
                 if (canShoot && canAttack && WeaponManager.Instance.actualAmmo >= 100)
                 {
                     canShoot = false;
+                    
                     WeaponManager.Instance.actualAmmo -= 100;
                     playerAnimator.SetTrigger("GunAttack");
                     playerController.StopMove();
@@ -62,6 +67,7 @@ public class GunSystem : MonoBehaviour
                 if (canShoot && canAttack && WeaponManager.Instance.actualAmmo >= 200)
                 {
                     canShoot = false;
+                    
                     playerAnimator.SetTrigger("BomberAttack");
                     WeaponManager.Instance.actualAmmo -= 200;
                     playerController.StopMove();
@@ -73,6 +79,7 @@ public class GunSystem : MonoBehaviour
                 if (canShoot && canAttack && WeaponManager.Instance.actualAmmo >= 300)
                 {
                     canShoot = false;
+                    audioSource.PlayOneShot(audioArm);
                     WeaponManager.Instance.actualAmmo -= 300;
                     playerController.StopMove();
                     playerAnimator.SetTrigger("BigArmAttack");
@@ -127,6 +134,7 @@ public class GunSystem : MonoBehaviour
 
     void BombAttack()
     {
+        audioSource.PlayOneShot(audioBomb);
         Rigidbody rb = Instantiate(bomb, shootPointB.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * fastSpeed, ForceMode.Impulse);
         rb.AddForce(transform.up * slowSpeed, ForceMode.Impulse);
@@ -135,6 +143,7 @@ public class GunSystem : MonoBehaviour
 
     void GunAttack()
     {
+        audioSource.PlayOneShot(audioBullet);
         Rigidbody rb = Instantiate(bullet, shootPoint.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
         rb.AddForce(transform.forward * fastSpeed, ForceMode.Impulse);
         Invoke(nameof(ResetShoot), lowCD);
@@ -161,6 +170,7 @@ public class GunSystem : MonoBehaviour
             if (canAttack && WeaponManager.Instance.canSword == true ) 
             {
                 canAttack = false;
+                audioSource.PlayOneShot(audioSword);
                 playerAnimator.SetTrigger("MeleeAttack");
                 Invoke(nameof(ResetAttack), 0.5f);
             }  

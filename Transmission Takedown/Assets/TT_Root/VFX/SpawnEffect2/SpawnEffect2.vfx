@@ -24,34 +24,13 @@ MonoBehaviour:
     - model: {fileID: 8926484042661614555}
       id: 0
       isStickyNote: 0
-    - model: {fileID: 8926484042661614556}
-      id: 0
-      isStickyNote: 0
     - model: {fileID: 8926484042661614558}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614580}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614583}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614585}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614589}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614632}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614593}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614620}
-      id: 0
-      isStickyNote: 0
-    - model: {fileID: 8926484042661614591}
       id: 0
       isStickyNote: 0
     - model: {fileID: 8926484042661614623}
@@ -638,7 +617,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.08673095703125,"inTangent":3.4118101596832277,"outTangent":3.4118101596832277,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.25525733828544619,"value":0.9576205611228943,"inTangent":1.1779417991638184,"outTangent":1.1779417991638184,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.36926522850990298,"value":0.8372365832328796,"inTangent":1.2094541788101197,"outTangent":1.2094541788101197,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.4631819725036621,"value":0.9589338898658752,"inTangent":0.3031161427497864,"outTangent":0.3031161427497864,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.5585590600967407,"value":0.8449363708496094,"inTangent":-0.2624768912792206,"outTangent":-0.2624768912792206,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.6994566917419434,"value":0.9393766522407532,"inTangent":-0.36090007424354555,"outTangent":-0.36090007424354555,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.7707040309906006,"value":0.8401949405670166,"inTangent":-0.4191056191921234,"outTangent":-0.4191056191921234,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.8936108350753784,"value":0.9082686901092529,"inTangent":-3.991682291030884,"outTangent":-3.991682291030884,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":1.0,"value":0.0,"inTangent":-8.537229537963868,"outTangent":-8.537229537963868,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":1.0,"inTangent":-0.16602632403373719,"outTangent":-0.16602632403373719,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.25525733828544619,"value":0.9576205611228943,"inTangent":-0.61097651720047,"outTangent":-0.61097651720047,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.36926522850990298,"value":0.8372365832328796,"inTangent":1.2094541788101197,"outTangent":1.2094541788101197,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.4631819725036621,"value":0.9589338898658752,"inTangent":0.3031161427497864,"outTangent":0.3031161427497864,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.5585590600967407,"value":0.8449363708496094,"inTangent":-0.2624768912792206,"outTangent":-0.2624768912792206,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.6994566917419434,"value":0.9393766522407532,"inTangent":-0.36090007424354555,"outTangent":-0.36090007424354555,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.7707040309906006,"value":0.8401949405670166,"inTangent":-0.4191056191921234,"outTangent":-0.4191056191921234,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.8936108350753784,"value":0.9082686901092529,"inTangent":-3.991682291030884,"outTangent":-3.991682291030884,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":1.0,"value":0.0,"inTangent":-8.537229537963868,"outTangent":-8.537229537963868,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: 2147483647
   m_Property:
     name: Size
@@ -3389,7 +3368,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.08673095703125,"inTangent":3.4118101596832277,"outTangent":3.4118101596832277,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.25525733828544619,"value":0.9576205611228943,"inTangent":1.1779417991638184,"outTangent":1.1779417991638184,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.36926522850990298,"value":0.8372365832328796,"inTangent":1.2094541788101197,"outTangent":1.2094541788101197,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.4631819725036621,"value":0.9589338898658752,"inTangent":0.3031161427497864,"outTangent":0.3031161427497864,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.5585590600967407,"value":0.8449363708496094,"inTangent":-0.2624768912792206,"outTangent":-0.2624768912792206,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.6994566917419434,"value":0.9393766522407532,"inTangent":-0.36090007424354555,"outTangent":-0.36090007424354555,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.7707040309906006,"value":0.8401949405670166,"inTangent":-0.4191056191921234,"outTangent":-0.4191056191921234,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.8936108350753784,"value":0.9082686901092529,"inTangent":-3.991682291030884,"outTangent":-3.991682291030884,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":1.0,"value":0.0,"inTangent":-8.537229537963868,"outTangent":-8.537229537963868,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":1.0,"inTangent":-0.16602632403373719,"outTangent":-0.16602632403373719,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.25525733828544619,"value":0.9576205611228943,"inTangent":-0.61097651720047,"outTangent":-0.61097651720047,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.36926522850990298,"value":0.8372365832328796,"inTangent":1.2094541788101197,"outTangent":1.2094541788101197,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.4631819725036621,"value":0.9589338898658752,"inTangent":0.3031161427497864,"outTangent":0.3031161427497864,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.5585590600967407,"value":0.8449363708496094,"inTangent":-0.2624768912792206,"outTangent":-0.2624768912792206,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.6994566917419434,"value":0.9393766522407532,"inTangent":-0.36090007424354555,"outTangent":-0.36090007424354555,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.7707040309906006,"value":0.8401949405670166,"inTangent":-0.4191056191921234,"outTangent":-0.4191056191921234,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.8936108350753784,"value":0.9082686901092529,"inTangent":-3.991682291030884,"outTangent":-3.991682291030884,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":1.0,"value":0.0,"inTangent":-8.537229537963868,"outTangent":-8.537229537963868,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: 2147483647
   m_Property:
     name: Size
@@ -5158,7 +5137,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":1.0,"inTangent":0.06664824485778809,"outTangent":0.06664824485778809,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":1.0,"value":0.0,"inTangent":-2.87141489982605,"outTangent":-2.87141489982605,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":1.0,"inTangent":-0.16602632403373719,"outTangent":-0.16602632403373719,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.25525733828544619,"value":0.9576205611228943,"inTangent":-0.61097651720047,"outTangent":-0.61097651720047,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.36926522850990298,"value":0.8372365832328796,"inTangent":1.2094541788101197,"outTangent":1.2094541788101197,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.4631819725036621,"value":0.9589338898658752,"inTangent":0.3031161427497864,"outTangent":0.3031161427497864,"tangentMode":0,"leftTangentMode":0,"rightTangentMode":0,"broken":false},{"time":0.5585590600967407,"value":0.8449363708496094,"inTangent":-0.2624768912792206,"outTangent":-0.2624768912792206,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.6994566917419434,"value":0.9393766522407532,"inTangent":-0.36090007424354555,"outTangent":-0.36090007424354555,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.7707040309906006,"value":0.8401949405670166,"inTangent":-0.4191056191921234,"outTangent":-0.4191056191921234,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.8936108350753784,"value":0.9082686901092529,"inTangent":-3.991682291030884,"outTangent":-3.991682291030884,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":1.0,"value":0.0,"inTangent":-8.537229537963868,"outTangent":-8.537229537963868,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: 2147483647
   m_Property:
     name: Size
