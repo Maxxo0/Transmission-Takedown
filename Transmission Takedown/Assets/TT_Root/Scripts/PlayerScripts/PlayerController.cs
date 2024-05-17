@@ -151,7 +151,8 @@ public class PlayerController : MonoBehaviour
         {
             canDash = false;
             dashing = true;
-            playerRb.AddForce(transform.forward * speed * dashForce);
+            Vector3 forceToApply = transform.forward * dashForce + transform.up;
+            playerRb.AddForce(forceToApply, ForceMode.Impulse);
             playerAnimator.SetBool("Run", true);
             Invoke(nameof(OnDash), 0.5f);
             Invoke(nameof(ResetDash), dashCD);
@@ -161,7 +162,7 @@ public class PlayerController : MonoBehaviour
             
         }
     }
-
+    
     void ResetDash()
     {
        

@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            
         }
         else
         {
@@ -61,11 +61,23 @@ public class GameManager : MonoBehaviour
     public void ExitOptions(InputAction.CallbackContext context)
     {
         optionsMenu.SetActive(false);
+        Time.timeScale = 1.0f;
     }
 
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void OpenOptions(InputAction.CallbackContext context)
+    {
+        optionsMenu.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void GoBack()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }
