@@ -41,6 +41,7 @@ public class WeaponManager : MonoBehaviour
 
     public enum Weapons { gun, bomber, bigarm, car, hand }
     [SerializeField] GameObject gunG, bombG, armG, carG, handG, swordG;
+    [SerializeField] GameObject cgun, cbomb, carm, ccar;
     public Weapons actualWeapon;
     public bool canGun, canBomber, canArm, canCar, onCar, haveMaxAmmo, canSword;
     public bool firstSword, firstGun, firstBomber, firstBigArm;
@@ -91,6 +92,7 @@ public class WeaponManager : MonoBehaviour
         if (canGun && onCar == false) 
         {
             gunG.SetActive(true); bombG.SetActive(false); armG.SetActive(false); carG.SetActive(false);
+            cgun.SetActive(true); cbomb.SetActive(false); carm.SetActive(false); ccar.SetActive(false);
             actualWeapon = Weapons.gun;
         }
     }
@@ -99,6 +101,7 @@ public class WeaponManager : MonoBehaviour
         if (canBomber && onCar == false) 
         {
             gunG.SetActive(false); bombG.SetActive(true); armG.SetActive(false); carG.SetActive(false);
+            cgun.SetActive(false); cbomb.SetActive(true); carm.SetActive(false); ccar.SetActive(false);
             actualWeapon = Weapons.bomber;
         }
     }
@@ -108,6 +111,7 @@ public class WeaponManager : MonoBehaviour
         if (canArm && onCar == false) 
         {
             gunG.SetActive(false); bombG.SetActive(false); armG.SetActive(true); carG.SetActive(false);
+            cgun.SetActive(false); cbomb.SetActive(false); carm.SetActive(true); ccar.SetActive(false);
             actualWeapon = Weapons.bigarm;
         }
     }
@@ -117,11 +121,13 @@ public class WeaponManager : MonoBehaviour
         if (canCar && haveMaxAmmo)
         {
             carG.SetActive(true);
+            cgun.SetActive(false); cbomb.SetActive(false); carm.SetActive(false); ccar.SetActive(true);
             actualWeapon = Weapons.car;
         }
         else if (canGun)
         {
             gunG.SetActive(true); bombG.SetActive(false); armG.SetActive(false); carG.SetActive(false);
+            cgun.SetActive(true); cbomb.SetActive(false); carm.SetActive(false); ccar.SetActive(false);
             actualWeapon = Weapons.gun;
         }
     }

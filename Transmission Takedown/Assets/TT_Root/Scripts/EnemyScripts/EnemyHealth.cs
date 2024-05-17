@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
         enemyHealth = enemyMaxHealth;
         alive = true;
         canDie = true;
-        i = Random.Range(1, 4);
+        i = Random.Range(1, 5);
 
     }
 
